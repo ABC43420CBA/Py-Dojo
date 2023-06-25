@@ -13,7 +13,7 @@ for i in range(N):
         n = n + 1
 
 pi = 4 * (n / N)
-print(f'经过{N}轮的丢豆子，统计计算得出pi={pi}')
+print(f'经过{N}轮的丢豆子，统计计算得出pi={round(pi,2)}')
 
 for k in range(4):
     N = 10000 * 10**k
@@ -28,4 +28,4 @@ for k in range(4):
             n = n + 1
 
     pi = 4 * (n / N)
-    print(f'经过{N}轮的丢豆子，统计计算得出pi={pi}')
+    print(f'经过{N}轮的丢豆子，统计计算得出pi={round(pi,2)}')
