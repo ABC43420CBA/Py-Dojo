@@ -9,7 +9,7 @@ for S in range(1,101):
     while True:
         b = S / a
         delta = a - b
-        print(f'这是第{counter}轮，S={S}, a={a}, b={b}, delta={delta}, 是否结束：{delta < infinitesimal}')
+        print(f'这是第{counter}轮，S={S}, a={round(a,2)}, b={round(b,2)}, delta={delta}, 是否结束：{delta < infinitesimal}')
     
         counter = counter + 1
 
