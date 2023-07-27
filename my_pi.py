@@ -22,6 +22,23 @@ class LList:
         return e
 
 
+class LCList(LList):
+    def __init__(self):
+        self._rear=None
+
+    def is_empty(self):
+        return self._rear == None
+
+    def prepend(self,elem):
+        if self.is_empty:
+            self._head=LNode(elem)
+            self._rear=self._head
+        else:
+            #temp=self._head
+            self._rear.next=LNode(self,elem,self._head)
+            self._head=self._rear.next
+
+
 
 a=LList()
 a.prepend(100)
