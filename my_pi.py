@@ -1,31 +1,36 @@
+class LNode:
+    def __init__(self,elem,next_=None):
+        self.elem=elem
+        self.next=next_
 
-from random import random
 
-N = 1000
+class LList:
+    def __init__(self):
+        self._head=None
 
-n = 0
-for i in range(N):
-    x = random()
-    y = random()
+    def is_empty(self):
+        return self._head is None
 
-    z = x*x + y*y
-    if z <= 1.0:
-        n = n + 1
+    def prepend(self,elem):
+        self._head=LNode(elem,self._head)
 
-pi = 4 * (n / N)
-print(f'经过{N}轮的丢豆子，统计计算得出pi={round(pi,2)}')
+    def pop(self):
+        if self._head is None:
+            pass
+        e=self._head.elem
+        self._head=self._head.next
+        return e
 
-for k in range(4):
-    N = 10000 * 10**k
 
-    n = 0
-    for i in range(N):
-        x = random()
-        y = random()
 
-        z = x*x + y*y
-        if z <= 1.0:
-            n = n + 1
-
-    pi = 4 * (n / N)
-    print(f'经过{N}轮的丢豆子，统计计算得出pi={round(pi,2)}')
+a=LList()
+a.prepend(100)
+a.prepend(33)
+p=a._head
+print(p.elem)
+a.pop()
+p=a._head
+print(p.elem)
+a.pop()
+p=a._head
+print(p.elem)
